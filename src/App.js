@@ -1,11 +1,14 @@
 import { createGlobalStyle } from "styled-components";
-import { Home } from "./pages/home";
+import { ThemeProvider } from "./contexts/theme-context";
+import { AppRoutes } from "./pages/routes";
 
 function App() {
   return (
     <main>
         <GlobalStyle />
-        <Home />
+        <ThemeProvider>
+          <AppRoutes />
+        </ThemeProvider>
     </main>
   );
 }
@@ -30,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
   
   main {
     height: 100vh;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   a {
