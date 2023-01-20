@@ -3,6 +3,7 @@ import { ThemeProvider } from "./contexts/theme-context";
 import { AppRoutes } from "./pages/routes";
 
 function App() {
+  
   return (
     <main>
         <GlobalStyle />

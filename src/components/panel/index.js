@@ -27,7 +27,6 @@ const Section = styled.section`
     align-items: center;
 
     .container {
-        width: 600px;
         height: 537px;
         background-color: ${props => props.theme.panelBackgroundColor};
         backdrop-filter: blur(10px);

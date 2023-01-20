@@ -3,6 +3,7 @@ import { Panel } from "../components/panel"
 import { PokemonList } from "../components/pokemon-list"
 
 const Home = () => {
+
     return (
         <>
             <Navbar />
