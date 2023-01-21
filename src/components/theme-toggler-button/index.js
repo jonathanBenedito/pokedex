@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { faSun } from "@fortawesome/free-solid-svg-icons"
 import { ThemeContext } from "../../contexts/theme-context"
 import { useContext } from "react"
-import { themes } from "../../contexts/theme-context/themes"
+import { themes } from "../../objects/themes"
 
 export const ThemeTogglerButton = () => {
 

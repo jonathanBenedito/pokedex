@@ -1,4 +1,9 @@
-export const pokemonTypes = [
+export const pokemonTypeThemes = [
+    {
+        name: 'unknown',
+        color: '#1B9784',
+        icon: '/images/pokemon-types-icons/unknown.svg',
+    },
     {
         name: 'normal',
         color: '#909C9F',
@@ -88,10 +93,5 @@ export const pokemonTypes = [
         name: 'fairy',
         color: '#EB8EE6',
         icon: '/images/pokemon-types-icons/fairy.svg',
-    },
-    {
-        name: 'unknown',
-        color: '#1B9784',
-        icon: '/images/pokemon-types-icons/unknown.svg',
     },
 ]

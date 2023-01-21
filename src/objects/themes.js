@@ -21,11 +21,13 @@ export const themes = {
         panelInnerBorderColor: 'rgba(255, 255, 255, 0.25)',
         panelFontColor: '#000000',
 
-        cardHoverBorderColor: '#9C9C9C',
+        pokemonCardBackgroundColor: 'rgba(56, 56, 56, 0.3)',
 
         loadMoreCardBackgroundColor: 'rgba(56, 56, 56, 0.3)',
         loadMoreCardColor: '#FFFFFF',
-        loadMoreCardHoverBackgroundColor: '#CE0627',   
+        loadMoreCardHoverBackgroundColor: '#CE0627',
+        loadMoreCardHoverColor: '#FFFFFF',
+        loadMoreIconColor: 'rgba(0, 0, 0, 0.08)',
 
         scrollButtonColor: '#9C9C9C',
         scrollBackgroundColor: 'rgba(255, 255, 255, 0.4)',
@@ -59,11 +61,13 @@ export const themes = {
         panelInnerBorderColor: 'rgba(0, 0, 0, 0.15)',
         panelFontColor: '#FFFFFF',
 
-        cardHoverBorderColor: '#9C9C9C',
+        pokemonCardBackgroundColor: 'rgba(255, 255, 255, 0.05)',
 
         loadMoreCardBackgroundColor: 'rgba(0, 0, 0, 0.25)',
         loadMoreCardColor: '#FFFFFF',
         loadMoreCardHoverBackgroundColor: '#383838', 
+        loadMoreCardHoverColor: '#CE0627',
+        loadMoreIconColor: 'rgba(56, 56, 56, 0.3)',
 
         scrollButtonColor: '#9C9C9C',
         scrollBackgroundColor: 'rgba(0, 0, 0, 0.4)',      

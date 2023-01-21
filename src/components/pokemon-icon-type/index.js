@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
-import { pokemonTypes } from "./pokemonTypes"
+import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
 
-export const PokemonIconTypes = ({typeName}) => {
+export const PokemonIconType = ({typeName}) => {
 
-    const type = pokemonTypes.find(type => type.name === typeName) ?? pokemonTypes.find(type => type.name === 'unknown')
+    const [type, setType] = useState({
+        name: '',
+        color: '',
+        icon: ''
+    })
 
-    return (
+    useEffect(() => {
+        setType(getPokemonTypeTheme(typeName))
+    })
+
+    return (       
         <Section backgroundColor={type.color}>
             <img src={type.icon} />
         </Section>
     )
-}
-
-PokemonIconTypes.defaultProps = {
-    typeName: 'unknown'
 }
 
 const Section = styled.section`
@@ -28,6 +32,6 @@ const Section = styled.section`
     justify-content: center;
 
     img {
-        height: 20px;
+        height: 18px;
     }
 `
