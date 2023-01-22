@@ -4,16 +4,18 @@ export const themes = {
         defaultFontColor: '#000000',
 
         dropdownBackgroundColor: '#9A041D',
-        dropdownHoverBackgroundColor: '#FFFFFF',
-        dropdownHoverColor: '#000000',
+        dropdownHoverColor: '#9A041D',
+
         dropdownMenuBackgroundColor: '#FFFFFF',
+        dropdownMenuRowHoverColor: '#E6E6E6',
+
         dropdownMenuBorder: '#9A041D',
         dropdownIconBackgroundColor: '#FFFFFF',
 
         themeTogglerBackgroundColor: '#9A041D',
         themeTogglerButtonColor: '#F2C03B',
 
-        dividerColor: 'rgba(0, 0, 0, 0.1)',
+        dividerColor: '#E6E6E6',
 
         background: '/images/light-mode-background.jpg',
 
@@ -26,7 +28,7 @@ export const themes = {
         loadMoreCardBackgroundColor: 'rgba(56, 56, 56, 0.3)',
         loadMoreCardColor: '#FFFFFF',
         loadMoreCardHoverBackgroundColor: '#CE0627',
-        loadMoreCardHoverColor: '#9A041D',
+        loadMoreCardHoverColor: '#FFFFFF',
         loadMoreIconColor: 'rgba(0, 0, 0, 0.08)',
 
         scrollButtonColor: '#9C9C9C',

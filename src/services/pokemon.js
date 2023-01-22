@@ -1,13 +1,16 @@
-const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
-const maxItems = 10
-const initialOffset = 0
+import { baseUrl, maxItems } from "../variables"
 
-export async function getPokemonList(url = `${baseUrl}/?limit=${maxItems}&offset=${initialOffset}`) {
+export async function getPokemonList(url = `${baseUrl}/pokemon/?limit=${maxItems}&offset=0`) {
     const response = await fetch(url)
     return await response.json()
 }
 
-export async function getPokemonDetails(id) {
+export async function getPokemonDetailsByUrl(url) {
+    const response = await fetch(url)
+    return await response.json()
+}
+
+export async function getPokemonDetailsById(id) {
     const response = await fetch(`${baseUrl}/${id}`)
     return await response.json()
 }

@@ -1,20 +1,35 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import styled from "styled-components"
 import { ThemeContext } from "../../contexts/theme-context"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons"
-import { getPokemonList } from "../../services/pokemon"
+import { PokemonsContext } from "../../contexts/pokemons-context"
 
 export const LoadMoreButton = ({loadMorePokemons}) => {
 
     const { theme } = useContext(ThemeContext)
+    const { pokemonList, setPokemonList, fetchList } = useContext(PokemonsContext) 
+
+    async function loadMorePokemons (nextUrl) {
+        const pokemons = await fetchList(nextUrl)
+        const detailedList = pokemons.detailedList
+        const newUrl = pokemons.nextLoadUrl
+
+        setPokemonList({
+            pokemons: [...pokemonList.pokemons, ...detailedList],
+            detailedList, nextLoadUrl: newUrl
+        })
+    }
 
     return (
-        <StyledLoadMoreButton {...{theme}} onClick={() => loadMorePokemons()} id="ld-btn">
+        <StyledLoadMoreButton {...{theme}} onClick={() => loadMorePokemons(pokemonList.nextLoadUrl)} id="ld-btn">
+     
             <IconContainer {...{theme}}>
                 <FontAwesomeIcon icon={faCirclePlus} />
             </IconContainer>
+            
             <p className='label'>Load More</p>
+
         </StyledLoadMoreButton>
     )
 }

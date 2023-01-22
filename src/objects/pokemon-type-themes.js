@@ -5,6 +5,11 @@ export const pokemonTypeThemes = [
         icon: '/images/pokemon-types-icons/unknown.svg',
     },
     {
+        name: 'all',
+        color: 'white',
+        icon: '/images/pokemon-types-icons/all.svg',
+    },
+    {
         name: 'normal',
         color: '#909C9F',
         icon: '/images/pokemon-types-icons/normal.svg',
@@ -93,5 +98,10 @@ export const pokemonTypeThemes = [
         name: 'fairy',
         color: '#EB8EE6',
         icon: '/images/pokemon-types-icons/fairy.svg',
+    },
+    {
+        name: 'shadow',
+        color: '#585362',
+        icon: '/images/pokemon-types-icons/dark.svg',
     },
 ]

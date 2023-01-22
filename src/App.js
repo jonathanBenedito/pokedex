@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { PokemonsProvider } from "./contexts/pokemons-context";
 import { ThemeProvider } from "./contexts/theme-context";
 import { AppRoutes } from "./pages/routes";
 
@@ -8,7 +9,9 @@ function App() {
     <main>
         <GlobalStyle />
         <ThemeProvider>
-          <AppRoutes />
+          <PokemonsProvider>
+            <AppRoutes />
+          </PokemonsProvider>
         </ThemeProvider>
     </main>
   );
