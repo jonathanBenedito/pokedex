@@ -7,8 +7,18 @@ import { PokemonCard } from "../pokemon-card"
 export const PokemonList = () => {
 
     const [pokemonList, setPokemonList] = useState({
-        pokemons: []
+        pokemons: [],
+        nextUrl: ''
     })
+
+    async function fetchList(url) {
+        const pokemons = await getPokemonList(url)
+        const pokemonsDetails = pokemons.results.map(async (pokemon) => {
+            return await getPokemonDetails(pokemon.url)
+        })
+        const pokemonDetailedList = await Promise.all(pokemonsDetails)
+        return {detailedList: pokemonDetailedList, nextUrl: pokemons.next}
+    }
 
     async function getPokemonDetails(url) {
         const response = await fetch(url)
@@ -25,22 +35,28 @@ export const PokemonList = () => {
         )
     }
 
+    async function loadMorePokemons (nextUrl = pokemonList.nextUrl) {
+        const pokemons = await fetchList(nextUrl)
+        const detailedList = pokemons.detailedList
+        const newNextUrl = pokemons.nextUrl
+        setPokemonList({
+            pokemons: [...pokemonList.pokemons, ...detailedList],
+            detailedList, nextUrl: newNextUrl
+        })
+    }
+
     useEffect(() => {
-        async function fetchList() {
-            const pokemons = await getPokemonList()
-            const pokemonsDetails = pokemons.results.map(async (pokemon) => {
-                return await getPokemonDetails(pokemon.url)
-            })
-            const pokemonDetailedList = await Promise.all(pokemonsDetails)
-            setPokemonList({pokemons: pokemonDetailedList})
+        async function fetchData() {
+            const pokemons = await fetchList()
+            setPokemonList({pokemons: pokemons.detailedList, nextUrl: pokemons.nextUrl})
         }
-        fetchList()
+        fetchData()
     }, [])
 
     return (
-        <Section>
+        <Section id="pokemon-list-container">
             <RenderPokemonList pokemons={pokemonList.pokemons} />
-            <LoadMoreButton />
+            <LoadMoreButton {...{loadMorePokemons}} />
         </Section>
     )
 }

@@ -1,15 +1,16 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import styled from "styled-components"
 import { ThemeContext } from "../../contexts/theme-context"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons"
+import { getPokemonList } from "../../services/pokemon"
 
-export const LoadMoreButton = () => {
+export const LoadMoreButton = ({loadMorePokemons}) => {
 
     const { theme } = useContext(ThemeContext)
 
     return (
-        <StyledLoadMoreButton {...{theme}} onClick={() => alert("hi")}>
+        <StyledLoadMoreButton {...{theme}} onClick={() => loadMorePokemons()} id="ld-btn">
             <IconContainer {...{theme}}>
                 <FontAwesomeIcon icon={faCirclePlus} />
             </IconContainer>
@@ -18,7 +19,7 @@ export const LoadMoreButton = () => {
     )
 }
 
-const StyledLoadMoreButton = styled.div`
+const StyledLoadMoreButton = styled.button`
     display: flex;
     background-color: ${props => props.theme.pokemonCardBackgroundColor};
     border-radius: 200px 70px 70px 200px;

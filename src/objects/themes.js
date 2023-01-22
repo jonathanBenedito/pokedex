@@ -26,7 +26,7 @@ export const themes = {
         loadMoreCardBackgroundColor: 'rgba(56, 56, 56, 0.3)',
         loadMoreCardColor: '#FFFFFF',
         loadMoreCardHoverBackgroundColor: '#CE0627',
-        loadMoreCardHoverColor: '#FFFFFF',
+        loadMoreCardHoverColor: '#9A041D',
         loadMoreIconColor: 'rgba(0, 0, 0, 0.08)',
 
         scrollButtonColor: '#9C9C9C',

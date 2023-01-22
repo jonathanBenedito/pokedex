@@ -2,8 +2,8 @@ const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
 const maxItems = 10
 const initialOffset = 0
 
-export async function getPokemonList() {
-    const response = await fetch(`${baseUrl}/?limit=${maxItems}&offset=${initialOffset}`)
+export async function getPokemonList(url = `${baseUrl}/?limit=${maxItems}&offset=${initialOffset}`) {
+    const response = await fetch(url)
     return await response.json()
 }
 
