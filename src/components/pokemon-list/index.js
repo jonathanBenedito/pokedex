@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import styled from "styled-components"
 import { PokemonsContext } from "../../contexts/pokemons-context"
+import { deviceBreakpoint } from "../../variables"
 import { LoadMoreButton } from "../load-more-button"
 import { PokemonCard } from "../pokemon-card"
 
@@ -33,4 +34,5 @@ const Section = styled.section`
     overflow-y: scroll;
     gap: 30px 16px;
     overflow-anchor: none;
+    justify-content: center;
 `

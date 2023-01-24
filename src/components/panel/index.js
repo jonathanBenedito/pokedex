@@ -33,6 +33,7 @@ const Section = styled.section`
         padding: 2.1rem;
         border-radius: 5rem;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease;
 
         @media (max-width: 400px) {
             margin-top: 55px;
@@ -46,5 +47,6 @@ const Section = styled.section`
         background-color: transparent;
         border-radius: 50px;
         padding: 4.6rem 4.8rem;
+        transition: 0.3s ease;
     }
 `

@@ -6,8 +6,11 @@ export const PokemonsContext = createContext({})
 export const PokemonsProvider = (props) => {
     const [pokemonList, setPokemonList] = useState({
         pokemons: [],
-        nextLoadUrl: ''
+        nextLoadUrl: '',
+        isFiltered: false
     })
+
+    const [reservedList, setReservedList] = useState([])
 
     async function fetchList(url) {
         const pokemons = await getPokemonList(url)
@@ -20,11 +23,24 @@ export const PokemonsProvider = (props) => {
 
     async function fetchData() {
         const pokemons = await fetchList()
-        setPokemonList({pokemons: pokemons.detailedList, nextLoadUrl: pokemons.nextLoadUrl})
+        setPokemonList({
+            pokemons: pokemons.detailedList,
+            nextLoadUrl: pokemons.nextLoadUrl,
+            isFiltered: false
+        })
     }
 
     return (
-        <PokemonsContext.Provider value={{pokemonList, setPokemonList, fetchList, fetchData}}>
+        <PokemonsContext.Provider
+            value={{
+                pokemonList,
+                setPokemonList,
+                fetchList,
+                fetchData,
+                reservedList,
+                setReservedList
+            }}
+        >
             {props.children}
         </PokemonsContext.Provider>
     )

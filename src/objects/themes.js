@@ -12,6 +12,17 @@ export const themes = {
         dropdownMenuBorder: '#9A041D',
         dropdownIconBackgroundColor: '#FFFFFF',
 
+        dropdownMenuScrollbarTrackColor: '#f0f0f0',
+        dropdownMenuScrollbarThumbColor: '#cdcdcd',
+        dropdownMenuScrollbarThumbHoverColor: '#b7b6b6',
+        dropdownMenuScrollbarThumbActiveColor: '#767676',
+
+        filterModalOverlayScreen: 'rgba(0, 0, 0, 0.50)',
+        filterModalBackgroundColor: 'rgba(255, 255, 255, 0.25)',
+        filterModalTitleColor: '#FFFFFF',
+        filterModalHeaderBorderColor: '#FFFFFF',
+        filterModalFontColor: '#FFFFFF',
+
         themeTogglerBackgroundColor: '#9A041D',
         themeTogglerButtonColor: '#F2C03B',
 
@@ -39,7 +50,12 @@ export const themes = {
         navigationTabInactiveBackgroundColor: '#EEEEEE',
         navigationTabInactiveColor: '#000000',
         navigationTabBodyBackgroundColor: '#FFFFFF',
-        navigationTabBodyBackgroundIllustrationColor: '#EDEDED'
+        navigationTabBodyBackgroundIllustrationColor: '#EDEDED',
+
+        scrollbarTrackColor: 'rgba(255, 255, 255, 0.4)',
+        scrollbarThumbColor: '#9C9C9C',
+        scrollbarThumbHoverColor: '#767676',
+        scrollbarThumbActiveColor: '#545353',
     },
     dark: {
         navbarBackgroundColor: '#383838',
@@ -52,6 +68,11 @@ export const themes = {
         dropdownMenuBorder: '#2A2A2A',
         dropdownIconBackgroundColor: '#FFFFFF',
 
+        dropdownMenuScrollbarTrackColor: '#f0f0f0',
+        dropdownMenuScrollbarThumbColor: '#cdcdcd',
+        dropdownMenuScrollbarThumbHoverColor: '#b7b6b6',
+        dropdownMenuScrollbarThumbActiveColor: '#767676',
+
         themeTogglerBackgroundColor: '#2A2A2A',
         themeTogglerButtonColor: '#25AFEE',
 
@@ -63,13 +84,13 @@ export const themes = {
         panelInnerBorderColor: 'rgba(0, 0, 0, 0.15)',
         panelFontColor: '#FFFFFF',
 
-        pokemonCardBackgroundColor: 'rgba(255, 255, 255, 0.05)',
+        pokemonCardBackgroundColor: 'rgba(255, 255, 255, 0.15)',
 
         loadMoreCardBackgroundColor: 'rgba(0, 0, 0, 0.25)',
         loadMoreCardColor: '#FFFFFF',
         loadMoreCardHoverBackgroundColor: '#383838', 
-        loadMoreCardHoverColor: '#CE0627',
-        loadMoreIconColor: 'rgba(56, 56, 56, 0.3)',
+        loadMoreCardHoverColor: '#FFFFFF',
+        loadMoreIconColor: 'rgba(255, 255, 255, 0.3)',
 
         scrollButtonColor: '#9C9C9C',
         scrollBackgroundColor: 'rgba(0, 0, 0, 0.4)',      
@@ -79,6 +100,11 @@ export const themes = {
         navigationTabInactiveBackgroundColor: '#606060',
         navigationTabInactiveColor: '#AFAFAF',
         navigationTabBodyBackgroundColor: '#282828',
-        navigationTabBodyBackgroundIllustrationColor: '#3A3A3A'
+        navigationTabBodyBackgroundIllustrationColor: '#3A3A3A',
+
+        scrollbarTrackColor: 'rgba(0, 0, 0, 0.4);',
+        scrollbarThumbColor: '#9C9C9C',
+        scrollbarThumbHoverColor: '#CACACA',
+        scrollbarThumbActiveColor: '#FFFFFF',
     } 
 }

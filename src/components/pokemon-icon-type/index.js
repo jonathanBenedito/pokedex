@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
 
-export const PokemonIconType = ({typeName}) => {
+export const PokemonIconType = ({typeName, size}) => {
 
     const [type, setType] = useState({
         name: '',
@@ -15,23 +15,25 @@ export const PokemonIconType = ({typeName}) => {
     })
 
     return (       
-        <Section backgroundColor={type.color}>
+        <Section backgroundColor={type.color} {...{size}}>
             <img src={type.icon} />
         </Section>
     )
 }
 
+PokemonIconType.defaultProps = {
+    typeName: 'all',
+    size: '26px'
+}
+
 const Section = styled.section`
-    width: 26px;
-    height: 26px;
+    width: ${props => props.size};
+    height: ${props => props.size};
     background-color: ${props => props.backgroundColor};
     border-radius: 100%;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
     display: flex;
     align-items: center;
     justify-content: center;
-
-    img {
-        height: 18px;
-    }
+    padding: 0.4rem;
 `
