@@ -19,8 +19,5 @@ const IconContainer = styled.div`
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     color: black;
     cursor: pointer;
-
-    img {
-        width: 20px;
-    }
+    padding: 0.6rem;
 `

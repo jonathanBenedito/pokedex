@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
+import { deviceBreakpoint } from "../../variables"
 
-export const PokemonIconType = ({typeName, size}) => {
+export const PokemonIconType = ({typeName, size, responsiveSize}) => {
 
     const [type, setType] = useState({
         name: '',
@@ -15,7 +16,7 @@ export const PokemonIconType = ({typeName, size}) => {
     })
 
     return (       
-        <Section backgroundColor={type.color} {...{size}}>
+        <Section {...{size, responsiveSize, backgroundColor: type.color}}>
             <img src={type.icon} />
         </Section>
     )
@@ -23,7 +24,8 @@ export const PokemonIconType = ({typeName, size}) => {
 
 PokemonIconType.defaultProps = {
     typeName: 'all',
-    size: '26px'
+    size: '26px',
+    responsiveSize: '26px'
 }
 
 const Section = styled.section`
@@ -35,5 +37,13 @@ const Section = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem;
+
+    img {
+        width: 70%;
+    }
+
+    @media (max-width: ${deviceBreakpoint.mobile}) {
+        width: ${props => props.responsiveSize};
+        height: ${props => props.responsiveSize};
+    }
 `

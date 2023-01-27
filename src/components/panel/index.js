@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import styled from "styled-components"
 import { ThemeContext } from "../../contexts/theme-context"
+import { deviceBreakpoint } from "../../variables"
 
 export const Panel = ({children}) => {
 
@@ -27,6 +28,8 @@ const Section = styled.section`
     align-items: center;
 
     .container {
+        width: 100%;
+        max-width: 1268px;
         height: 537px;
         background-color: ${props => props.theme.panelBackgroundColor};
         backdrop-filter: blur(10px);
@@ -38,6 +41,10 @@ const Section = styled.section`
         @media (max-width: 400px) {
             margin-top: 55px;
         }
+
+        @media (max-width: ${deviceBreakpoint.mobile}) {
+            height: 500px;
+        }
     }
 
     .container .inner-border {
@@ -48,5 +55,9 @@ const Section = styled.section`
         border-radius: 50px;
         padding: 4.6rem 4.8rem;
         transition: 0.3s ease;
+
+        @media (max-width: ${deviceBreakpoint.mobile}) {
+            padding: 2.3rem 2.2rem;
+        }
     }
 `

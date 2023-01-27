@@ -77,4 +77,8 @@ const StyledGlobal = createGlobalStyle`
     line-height: inherit;
     padding: 0;
   }
+
+  ul { 
+    list-style-type: none; 
+ }
 `

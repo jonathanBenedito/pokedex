@@ -11,10 +11,8 @@ export const Home = () => {
     }, [])
 
     return (
-        <>
-            <Panel>
-                <PokemonList />
-            </Panel>
-        </>
+        <Panel>
+            <PokemonList />
+        </Panel>
     )
 }

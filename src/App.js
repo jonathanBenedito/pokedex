@@ -1,5 +1,3 @@
-import { createGlobalStyle } from "styled-components";
-import { Navbar } from "./components/navbar";
 import { PokemonsProvider } from "./contexts/pokemons-context";
 import { ThemeProvider } from "./contexts/theme-context";
 import { AppRoutes } from "./pages/routes";

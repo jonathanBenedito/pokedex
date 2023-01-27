@@ -11,6 +11,6 @@ export async function getPokemonDetailsByUrl(url) {
 }
 
 export async function getPokemonDetailsById(id) {
-    const response = await fetch(`${baseUrl}/${id}`)
+    const response = await fetch(`${baseUrl}/pokemon/${id}`)
     return await response.json()
 }

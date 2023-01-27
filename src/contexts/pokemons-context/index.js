@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 import { getPokemonDetailsByUrl, getPokemonList } from "../../services/pokemon";
+import { getPokemonTypeDetailsByUrl } from "../../services/pokemon-type";
+import { maxItems } from "../../variables";
 
 export const PokemonsContext = createContext({})
 
@@ -30,6 +32,33 @@ export const PokemonsProvider = (props) => {
         })
     }
 
+    async function fetchPokemonListDetails(pokemons) {
+        const pokemonsDetails = pokemons.map(async (pokemon) => {
+            return await getPokemonDetailsByUrl(pokemon.url)
+        })
+
+        const pokemonDetailedList = await Promise.all(pokemonsDetails)
+        return pokemonDetailedList
+    }
+
+    async function filterPokemonListByType(typeUrl) {
+        const pokemonTypeDetails = await getPokemonTypeDetailsByUrl(typeUrl)
+        
+        let pokemonList = [{name: '', url: ''}]
+        pokemonList = pokemonTypeDetails.pokemon.map((item) => item.pokemon)
+
+        const pokemonDetailedList = await fetchPokemonListDetails(pokemonList)
+        const splicedPokemonList = pokemonDetailedList.splice(0, maxItems)
+
+        setReservedList(pokemonDetailedList)
+
+        setPokemonList({
+            pokemons: splicedPokemonList,
+            nextLoadUrl: '',
+            isFiltered: true
+        })
+    }
+
     return (
         <PokemonsContext.Provider
             value={{
@@ -38,7 +67,8 @@ export const PokemonsProvider = (props) => {
                 fetchList,
                 fetchData,
                 reservedList,
-                setReservedList
+                setReservedList,
+                filterPokemonListByType
             }}
         >
             {props.children}

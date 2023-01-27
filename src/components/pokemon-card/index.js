@@ -29,8 +29,7 @@ export const PokemonCard = ({id, sprites, name, types}) => {
 
     return (
         <StyledPokemonCard
-            to={`/pokemon-info/${id}`}
-            className="pokemon-card"
+            to={`/pokemon-details/${id}`}
             key={id}
             color={pokemonTypeColor.color}
             {...{theme}}

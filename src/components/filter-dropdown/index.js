@@ -6,21 +6,19 @@ import { PokemonIconType } from "../pokemon-icon-type";
 import { getPokemonTypeList, getPokemonTypeDetailsByUrl } from "../../services/pokemon-type";
 import { PokemonsContext } from "../../contexts/pokemons-context";
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme";
-import { getPokemonDetailsByUrl } from "../../services/pokemon";
-import { maxItems } from "../../variables"
 import { DropdownMenu, StyledFilterDropdown, Label } from "./style";
-import { MobileFilterButton } from "../mobile-filter-button";
 import { FilterIcon } from "../filter-icon";
 
 export const FilterDropdown = () => {
 
     const { theme } = useContext(ThemeContext)
-    const { fetchData, setPokemonList, setReservedList } = useContext(PokemonsContext)
+    const { fetchData, filterPokemonListByType } = useContext(PokemonsContext)
 
     const [showMenu, setShowMenu] = useState(false)
     const [pokemonTypes, setPokemonTypes] = useState([])
 
     const [typeTheme, setTypeTheme] = useState({
+        name: 'Filter by type',
         color: 'white',
         icon: '/images/filter-solid.svg',  
     })
@@ -28,42 +26,20 @@ export const FilterDropdown = () => {
     function updateFilterIcon(typeName) {
         const typeTheme = getPokemonTypeTheme(typeName)
         setTypeTheme({
+            name: typeName,
             color: typeTheme.color,
             icon: typeTheme.icon
         })
     }
 
+    function filterPokemons(pokemonTypeObject) {
+        updateFilterIcon(pokemonTypeObject.name)
+        filterPokemonListByType(pokemonTypeObject.url)
+    }
+
     function resetFilter() {
         updateFilterIcon('all')
         fetchData()
-    }
-
-    async function fetchList(pokemons) {
-        const pokemonsDetails = pokemons.map(async (pokemon) => {
-            return await getPokemonDetailsByUrl(pokemon.url)
-        })
-
-        const pokemonDetailedList = await Promise.all(pokemonsDetails)
-        return pokemonDetailedList
-    }
-
-    async function filterPokemonListByType(pokemonType) {
-        updateFilterIcon(pokemonType.name)
-        const pokemonTypeDetails = await getPokemonTypeDetailsByUrl(pokemonType.url)
-        
-        let pokemonList = [{name: '', url: ''}]
-        pokemonList = pokemonTypeDetails.pokemon.map((item) => item.pokemon)
-
-        const pokemonDetailedList = await fetchList(pokemonList)
-        const splicedPokemonList = pokemonDetailedList.splice(0, maxItems)
-
-        setReservedList(pokemonDetailedList)
-
-        setPokemonList({
-            pokemons: splicedPokemonList,
-            nextLoadUrl: '',
-            isFiltered: true
-        })
     }
 
     const RenderTypeList = ({list}) => {
@@ -76,7 +52,7 @@ export const FilterDropdown = () => {
                     </li>
 
                     {list.map((pokemonType, index) => (
-                        <li className="row" key={index} onClick={() => filterPokemonListByType(pokemonType)}>
+                        <li className="row" key={index} onClick={() => filterPokemons(pokemonType)}>
                             <PokemonIconType typeName={pokemonType.name}/>
                             <p className="pokemon-type-name">{pokemonType.name}</p>
                         </li>
@@ -98,7 +74,7 @@ export const FilterDropdown = () => {
     }, [])
 
     return (
-        <StyledFilterDropdown {...{theme}} onClick={() => setShowMenu(!showMenu)} showMenu={showMenu}>
+        <StyledFilterDropdown {...{theme}} onClick={() => setShowMenu(!showMenu)} showMenu={showMenu} {...{typeTheme}}>
             
             <DropdownMenu {...{theme}} showMenu={showMenu}>
                 <RenderTypeList list={pokemonTypes} />
@@ -106,7 +82,7 @@ export const FilterDropdown = () => {
 
             <Label {...{theme}} backgroundColor={typeTheme.color}>
                 <FilterIcon iconTheme={typeTheme} />
-                <p className="text">Filter by type</p>
+                <p className="text">{typeTheme.name}</p>
             </Label>
             
             <FontAwesomeIcon icon={faChevronDown} />

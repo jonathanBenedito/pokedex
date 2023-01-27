@@ -6,7 +6,7 @@ export const StyledFilterDropdown = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 210px;
-    background-color: ${props => props.theme.dropdownBackgroundColor};
+    background-color: ${props => props.theme.dropdownLabelBackgroundColor};
     align-self: center;
     border-radius: 2.45rem;
     padding-right: 1.5rem;
@@ -101,6 +101,7 @@ export const Label = styled.div`
     gap: 0.8rem;
 
     .text {
+        text-transform: capitalize;
         font-size: 1.8rem;
     }
 `
