@@ -3,7 +3,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../contexts/theme-context";
 import { PokemonIconType } from "../pokemon-icon-type";
-import { getPokemonTypeList, getPokemonTypeDetailsByUrl } from "../../services/pokemon-type";
+import { getPokemonTypeList } from "../../services/pokemon-type";
 import { PokemonsContext } from "../../contexts/pokemons-context";
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme";
 import { DropdownMenu, StyledFilterDropdown, Label } from "./style";

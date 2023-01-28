@@ -10,6 +10,7 @@ import { getPokemonMove } from "../../services/pokemon-move"
 export const PokemonDetails = () => {
 
     const { id } = useParams()
+    
     const [pokemonDetails, setPokemonDetails] = useState({
         abilities: [
             {

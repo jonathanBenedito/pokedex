@@ -1,6 +1,6 @@
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
 import { PokemonIconType } from "../pokemon-icon-type"
-import { Container, ImageContainer, NameRow, TypeRow, TypeTag } from "./styles"
+import { Container, ImageContainer, NameRow, TypeRow, TypeTag } from "./style"
 
 export const PokemonProfile = ({pokemonDetails}) => {
 

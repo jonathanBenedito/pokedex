@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { MainContent } from "../components/main-content";
-import { Navbar } from "../components/navbar";
-import { Home } from "./home";
-import { PokemonDetails } from "./pokemon-details";
+import { MainContent } from "../../components/main-content";
+import { Navbar } from "../../components/navbar";
+import { Home } from "../home";
+import { PokemonDetails } from "../pokemon-details";
 
 export const AppRoutes = () => {
     

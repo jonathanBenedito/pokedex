@@ -66,8 +66,6 @@ export const themes = {
         scrollbarThumbHoverColor: '#767676',
         scrollbarThumbActiveColor: '#545353',
 
-        scrollbarTabTrackColor: 'rgba(0, 0, 0, 0.1)',
-
         backButtonIconBackgroundColor: '#FFFFFF',
         backButtonHoverColor: '#9A041D',       
         backButtonLabelBackgroundColor: '#9A041D'
@@ -121,13 +119,15 @@ export const themes = {
         
         navigationTabActiveBackgroundColor: '#282828',
         navigationTabActiveColor: '#FFFFFF',
+
         navigationTabInactiveBackgroundColor: '#606060',
         navigationTabInactiveColor: '#AFAFAF',
-        navigationTabBodyBackgroundColor: '#282828',
-        navigationTabBodyBackgroundIllustrationColor: '#3A3A3A',
 
         navigationTabHoverBackgroundColor: '#FFFFFF',
         navigationTabHoverColor: '#383838',
+
+        navigationTabBodyBackgroundColor: '#282828',
+        navigationTabBodyBackgroundIllustrationColor: '#3A3A3A',
 
         tabBodyBackgroundIllustration: '/images/background-illustration-dark.png',
         tabBodyBackgroundIllustrationMobile: '/images/background-illustration-mobile-dark.png',
