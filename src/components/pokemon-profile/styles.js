@@ -63,18 +63,16 @@ export const NameRow = styled.div`
 
 export const TypeRow = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.7rem;
 
     @media (max-width: ${deviceBreakpoint.mobile}) {
-        justify-content: center;
         gap: 1rem;
     }
 `
 
 export const TypeTag = styled.div`
     display: flex;
-    flex-basis: 148px;
     background-color: ${props => props.typeBackgroundColor};
     color: white;
     border-radius: 5rem 2rem 2rem 5rem;

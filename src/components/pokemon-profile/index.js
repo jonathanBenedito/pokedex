@@ -14,7 +14,7 @@ export const PokemonProfile = ({pokemonDetails}) => {
         return (
             <TypeRow>
                 {types.map((object) => (                 
-                    <TypeTag typeBackgroundColor={getPokemonTypeTheme(object.type.name).color}>
+                    <TypeTag typeBackgroundColor={getPokemonTypeTheme(object.type.name).color} key={object.slot}>
                         <PokemonIconType typeName={object.type.name} size="42px" responsiveSize="25px"/>
                         <p className="type-name">{object.type.name}</p>
                     </TypeTag>   
@@ -27,7 +27,9 @@ export const PokemonProfile = ({pokemonDetails}) => {
         <Container>
 
                 <ImageContainer {...{pokemonTypeTheme}}>
-                    <img src={pokemonDetails.sprites.other["official-artwork"].front_default} alt="Pokemon image" />
+                    <img 
+                        src={`${pokemonDetails.sprites.other["official-artwork"].front_default}`} 
+                        alt="Pokemon image" />
                 </ImageContainer>
 
                 <NameRow>

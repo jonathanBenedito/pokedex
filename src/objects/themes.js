@@ -91,7 +91,7 @@ export const themes = {
         dropdownMenuScrollbarThumbActiveColor: '#767676',
 
         filterModalOverlayScreen: 'rgba(0, 0, 0, 0.50)',
-        filterModalBackgroundColor: 'rgba(255, 255, 255, 0.25)',
+        filterModalBackgroundColor: 'rgba(0, 0, 0, 0.25)',
         filterModalTitleColor: '#FFFFFF',
         filterModalHeaderBorderColor: '#FFFFFF',
         filterModalFontColor: '#FFFFFF',

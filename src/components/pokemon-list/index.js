@@ -14,14 +14,14 @@ export const PokemonList = () => {
         return (
             <>
                 {pokemons.map(pokemon => (
-                    <PokemonCard {...pokemon} key={pokemon.id}/>
+                    <PokemonCard {...pokemon} key={pokemon.id} />
                 ))}
             </>
         )
     }
 
     return (
-        <StyledPokemonList id="pokemon-list-container" {...{theme}}>
+        <StyledPokemonList id="pokemon-list-container" {...theme}>
             <RenderPokemonList pokemons={pokemonList.pokemons} />
             <LoadMoreButton />
         </StyledPokemonList>

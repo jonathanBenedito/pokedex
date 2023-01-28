@@ -24,15 +24,17 @@ export const Navbar = () => {
 
     const NavigationButtonHandler = ({route}) => {
         
-
         if(route.includes('pokemon-details')) {
-            console.log(route)
             return (
                 <BackButton />
             )
         } else {
             return (
-                <FilterDropdown />
+                <>
+                    <MobileModalFilterButton {...{setShowFilterModal, filterTypeTheme}} />
+                    <FilterDropdown />
+                </>
+                
             )
         }
     }
@@ -42,7 +44,6 @@ export const Navbar = () => {
             <FilterModal {...{showFilterModal, setShowFilterModal, filterTypeTheme, setFilterTypeTheme}} />
             <Container>
                 <div className="buttons-section">
-                    <MobileModalFilterButton {...{setShowFilterModal, filterTypeTheme}} />
                     <NavigationButtonHandler route={currentLocation.pathname}/>
                     <ThemeTogglerButton />
                 </div>

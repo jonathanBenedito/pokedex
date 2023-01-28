@@ -5,7 +5,7 @@ import { ThemeContext } from "../../contexts/theme-context"
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
 import { PokemonIconType } from "../pokemon-icon-type"
 
-export const PokemonCard = ({id, sprites, name, types}) => {
+export const PokemonCard = ({id, sprites, name, types, test}) => {
 
     const { theme } = useContext(ThemeContext)
 

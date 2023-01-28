@@ -27,7 +27,13 @@ export const StyledBackButton = styled.div`
     `}
 
     @media (max-width: ${deviceBreakpoint.mobile}) {
-        display: none;
+        background-color: transparent;
+        width: 18px;
+        margin-right: 1.6rem;
+        
+        .text {
+            display: none;
+        }
     }
 `
 

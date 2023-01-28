@@ -1,22 +1,62 @@
+import { useEffect } from "react"
 import { useContext, useState } from "react"
 import styled, { css } from "styled-components"
 import { ThemeContext } from "../../contexts/theme-context"
+import { getPokemonMove } from "../../services/pokemon-move"
 import { deviceBreakpoint } from "../../variables"
 import { PokemonIconType } from "../pokemon-icon-type"
 
 export const PokemonInformation = ({pokemonDetails}) => {
 
     const [selectedTab, setSelectedTab] = useState('moves')
+
+
     const { theme } = useContext(ThemeContext)
+
+    function replaceHyphen(word)  {
+        return word.replace("-", " ")
+    }
 
     const RenderPokemonMoveList = ({moves}) => {
         return (
             <PokemonMoveList {...{theme}}>
-                <PokemonMoveRow {...{theme}}>
-                    <PokemonIconType typeName={"bug"} size="42px" responsiveSize="20px"/>
-                    <p className="move-name">Move List</p>
-                </PokemonMoveRow>             
+
+                {moves.map((move, index) => (
+                    <PokemonMoveRow {...{theme}} key={index}>
+                        {<PokemonIconType typeName={move.type.name} size="42px" responsiveSize="20px"/>}
+                        <p className="move-name">{replaceHyphen(move.name)}</p>
+                    </PokemonMoveRow>     
+                ))}
+        
             </PokemonMoveList>
+        )
+    }
+
+    const RenderTranslatedAbility = ({effectEntries, language = "en"}) => {
+
+        const filteredAbility = effectEntries.filter(entry => entry.language.name === language)
+        
+        const translatedAbility = filteredAbility.length > 0 ? filteredAbility[0].effect : ''
+
+        return (
+            <p className="ability-description">
+                {translatedAbility}
+            </p>
+        )
+    }
+
+    const RenderPokemonAbilityList = ({abilities}) => {
+        return (
+            <PokemonAbilities>
+
+                {abilities.map((ability, index) => (
+                    <PokemonAbilityRow {...{ theme }} key={index}>
+                        <h3 className="ability-name">{replaceHyphen(ability.name)}</h3>
+                        <RenderTranslatedAbility effectEntries={ability.effect_entries} />
+                    </PokemonAbilityRow>
+                ))}
+
+            </PokemonAbilities>
         )
     }
 
@@ -37,18 +77,11 @@ export const PokemonInformation = ({pokemonDetails}) => {
                 <TabBody {...{ theme }}>
 
                     <TabContent {...{ selectedTab, tabName: 'moves' }}>
-                        <RenderPokemonMoveList />
+                        <RenderPokemonMoveList moves={pokemonDetails.detailedMoves} />
                     </TabContent>
 
                     <TabContent {...{ selectedTab, tabName: 'abilities' }}>
-                        <PokemonAbilities>
-                            <PokemonAbilityRow {...{ theme }}>
-                                <h3 className="ability-name">Sturdy</h3>
-                                <p className="ability-description">
-                                    When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage.
-                                </p>
-                            </PokemonAbilityRow>
-                        </PokemonAbilities>
+                        <RenderPokemonAbilityList abilities={pokemonDetails.detailedAbilities} />
                     </TabContent>
 
                 </TabBody>
@@ -141,7 +174,7 @@ const TabContent = styled.div`
     display: none;
     overflow-y: auto;
     max-height: 320px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 
     ${props => props.selectedTab === props.tabName && css`
         display: flex;
@@ -171,12 +204,12 @@ const PokemonMoveList = styled.ul`
 const PokemonMoveRow = styled.li`
     display: flex;
     gap: 1.5rem;
-    align-items: center;
-    
+    align-items: center;   
     font-weight: 600;
     padding-bottom: 1rem;
     width: 100%;
     flex-basis: 180px;
+    text-transform: capitalize;
 
     @media (max-width: ${deviceBreakpoint.mobile}) {
         gap: 0.7rem;
@@ -196,12 +229,12 @@ const PokemonAbilityRow = styled.li`
 
     .ability-name {
         margin-bottom: 1.2rem;
+        text-transform: capitalize;
     }
 
     .ability-description {
         padding-bottom: 1.7rem;
         border-bottom: 1px solid ${props => props.theme.dividerColor};
-        font-size: 1.6rem;
     }
 
     @media (max-width: ${deviceBreakpoint.mobile}) {

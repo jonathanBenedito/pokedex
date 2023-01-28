@@ -4,10 +4,10 @@ import { PokemonList } from "../components/pokemon-list"
 import { PokemonsContext} from "../contexts/pokemons-context"
 
 export const Home = () => {
-    const { fetchData } = useContext(PokemonsContext)
+    const { fetchData, pokemonList } = useContext(PokemonsContext)
 
     useEffect(() => {
-        fetchData()
+        if (pokemonList.pokemons.length === 0) fetchData()
     }, [])
 
     return (

@@ -5,6 +5,7 @@ import { PokemonDetailsContent } from "../../components/pokemon-details-content"
 import { PokemonInformation } from "../../components/pokemon-information"
 import { PokemonProfile } from "../../components/pokemon-profile"
 import { getPokemonDetailsById } from "../../services/pokemon"
+import { getPokemonMove } from "../../services/pokemon-move"
 
 export const PokemonDetails = () => {
 
@@ -18,6 +19,15 @@ export const PokemonDetails = () => {
                 },
             },
         ],
+        detailedAbilities: [{
+            name: "",
+            effect_entries: [{
+                effect: "",
+                language: {
+                    name: ""
+                }
+            }]
+        }],
         id: 2,
         moves: [
             {
@@ -27,7 +37,10 @@ export const PokemonDetails = () => {
                 },
             },
         ],
-        name: "",
+        detailedMoves: [{
+            name: "",
+            type: { name: "" }
+        }],
         sprites: {
             other: {
                 'official-artwork': {
@@ -57,8 +70,18 @@ export const PokemonDetails = () => {
     useEffect(() => {
         async function fetchData() {
             const pokemonDetails = await getPokemonDetailsById(id)
-            console.log(pokemonDetails)
-            setPokemonDetails(pokemonDetails)
+
+            const moveDetails = pokemonDetails.moves.map(async (moveObject) => {
+                return getPokemonMove(moveObject.move.url)
+            })
+            const detailedMoves = await Promise.all(moveDetails)
+
+            const abilitiesDetails = pokemonDetails.abilities.map(async (abilityObject) => {
+                return getPokemonMove(abilityObject.ability.url)
+            })
+            const detailedAbilities = await Promise.all(abilitiesDetails)
+            
+            setPokemonDetails({...pokemonDetails, detailedMoves, detailedAbilities})
         }
 
         fetchData()

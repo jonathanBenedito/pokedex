@@ -57,7 +57,7 @@ const Section = styled.section`
         transition: 0.3s ease;
 
         @media (max-width: ${deviceBreakpoint.mobile}) {
-            padding: 2.3rem 2.2rem;
+            padding: 2.3rem 0.4rem;
         }
     }
 `
