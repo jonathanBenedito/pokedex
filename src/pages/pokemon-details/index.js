@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { LoadingAnimation } from "../../components/loading-animation"
 import { Panel } from "../../components/panel"
 import { PokemonDetailsContent } from "../../components/pokemon-details-content"
 import { PokemonInformation } from "../../components/pokemon-information"
@@ -29,7 +30,7 @@ export const PokemonDetails = () => {
                 }
             }]
         }],
-        id: 2,
+        id: 0,
         moves: [
             {
                 move: {
@@ -88,12 +89,27 @@ export const PokemonDetails = () => {
         fetchData()
     }, [])
 
-    return (
-        <Panel>
+    console.log(pokemonDetails)
+
+    const RenderPokemonDetails = ({pokemonDetails}) => {
+        while(pokemonDetails.id === 0) {
+            return (
+                <PokemonDetailsContent>
+                    <LoadingAnimation />
+                </PokemonDetailsContent>
+            )
+        }
+        return (
             <PokemonDetailsContent>
                 <PokemonProfile {...{ pokemonDetails }} />
                 <PokemonInformation {...{ pokemonDetails }} />
             </PokemonDetailsContent>
+        )
+    }
+
+    return (
+        <Panel>
+            <RenderPokemonDetails {...{ pokemonDetails }}/>
         </Panel>
     )
 }

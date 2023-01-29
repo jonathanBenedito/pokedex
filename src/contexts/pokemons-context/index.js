@@ -42,9 +42,10 @@ export const PokemonsProvider = (props) => {
     }
 
     async function filterPokemonListByType(typeUrl) {
+
         const pokemonTypeDetails = await getPokemonTypeDetailsByUrl(typeUrl)
         
-        let pokemonList = [{name: '', url: ''}]
+        let pokemonList = [{name: '', url: '', pokemons: []}]
         pokemonList = pokemonTypeDetails.pokemon.map((item) => item.pokemon)
 
         const pokemonDetailedList = await fetchPokemonListDetails(pokemonList)

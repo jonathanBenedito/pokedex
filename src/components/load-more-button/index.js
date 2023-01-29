@@ -5,6 +5,7 @@ import { faCirclePlus } from "@fortawesome/free-solid-svg-icons"
 import { PokemonsContext } from "../../contexts/pokemons-context"
 import { maxItems } from "../../variables"
 import { IconContainer, StyledLoadMoreButton } from "./style"
+import { LoadingAnimation } from "../loading-animation"
 
 export const LoadMoreButton = () => {
 
@@ -15,6 +16,12 @@ export const LoadMoreButton = () => {
 
     const RenderLoadMoreButton = ({isDisabled}) => {
         if(!isDisabled) {
+            while(pokemonList.pokemons.length === 0) {
+                return (
+                    <LoadingAnimation />
+                )
+            }
+
             return (
                 <StyledLoadMoreButton {...{theme}} onClick={() => loadMorePokemons(pokemonList.nextLoadUrl)} id="ld-btn">
              

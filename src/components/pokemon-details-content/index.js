@@ -19,6 +19,7 @@ const Container = styled.article`
     justify-content: space-between;
     gap: 30px;
     color: ${props => props.theme.defaultFontColor};
+    width: 100%;
 
     @media (max-width: ${deviceBreakpoint.mobile}) {
         gap: 15px;

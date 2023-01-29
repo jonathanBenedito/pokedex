@@ -34,7 +34,10 @@ export const PokemonCard = ({id, sprites, name, types, test}) => {
             {...{theme}}
         >
             <ImageContainer>
-                <img src={sprites.versions["generation-v"]["black-white"].animated.front_default ?? '/images/placeholder.webp'} />
+                <img src={sprites.versions["generation-v"]["black-white"].animated.front_default ?? 
+                            sprites.other["official-artwork"].front_default
+                        } 
+                />
             </ImageContainer>
             <Information>
                 <p className="name">{name}</p>
