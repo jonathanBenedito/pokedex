@@ -23,13 +23,13 @@ O usuário também poderá filtrar a lista de pokémons por tipos, utilizando o 
 
 ### Ferramentas
 
-- <u>PokeApi</u>: Utilizado como base de coleta das informações dos pokemons, requerimento obrigatório pelo desafio do curso.
+- <b>PokeApi</b>: Utilizado como base de coleta das informações dos pokemons, requerimento obrigatório pelo desafio do curso.
 
-- <u>React Router</u>: Utilizado para mapear as rotas da aplicação, evitando assim o recarregamento das páginas e definindo o aspecto SPA (Single Page Application).
+- <b>React Router</b>: Utilizado para mapear as rotas da aplicação, evitando assim o recarregamento das páginas e definindo o aspecto SPA (Single Page Application).
 
-- <u>styled-components</u>: Usado para evitar possíveis bugs de classes CSS e tornar a estilização mais dinâmica.
+- <b>styled-components</b>: Usado para evitar possíveis bugs de classes CSS e tornar a estilização mais dinâmica.
 
-- <u>Fonts Awesome</u>: Aplicado para implementar alguns ícones nos componentes.
+- <b>Fonts Awesome</b>: Aplicado para implementar alguns ícones nos componentes.
 
 ### Planejamento
 
@@ -69,7 +69,7 @@ Após a finalização dos códigos, foi feita a remoção dos arquivos desnecess
 - Javascript
 - CSS
 
-### 🔗 Links
+## 🔗 Links
 
 Website: <a href="https://pokedex-nu-ten.vercel.app/">pokedex-nu-ten.vercel.app</a>
 <br />
