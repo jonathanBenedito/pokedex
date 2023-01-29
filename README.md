@@ -23,7 +23,7 @@ O usuário também poderá filtrar a lista de pokémons por tipos, utilizando o 
 
 ### Ferramentas
 
-- <u>PokeApi</u>: Utilizado como base de coleta das informações dos pokemons, requerimento obrigatório pelo curso.
+- <u>PokeApi</u>: Utilizado como base de coleta das informações dos pokemons, requerimento obrigatório pelo desafio do curso.
 
 - <u>React Router</u>: Utilizado para mapear as rotas da aplicação, evitando assim o recarregamento das páginas e definindo o aspecto SPA (Single Page Application).
 
