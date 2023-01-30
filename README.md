@@ -3,7 +3,7 @@
 </div>
 <h1 align="center"></h1>
 <p align="center">
-    <a href="https://pokedex-1v9psfcic-jonathanbenedito.vercel.app/" target="_blank">Pokédex</a> é um projeto feito em <a href="https://reactjs.org/">React JS</a> no formato de Single Page Application (SPA), alimentada pela <a href="https://pokeapi.co/">PokéAPI</a>. Sua finalidade é listar e mostrar informações dos pokemons existentes na série de jogos eletrônicos.</a> 
+    <a href="https://pokedex-nu-ten.vercel.app/" target="_blank">Pokédex</a> é um projeto feito em <a href="https://reactjs.org/">React JS</a> no formato de Single Page Application (SPA), alimentada pela <a href="https://pokeapi.co/">PokéAPI</a>. Sua finalidade é listar e mostrar informações dos pokemons existentes na série de jogos eletrônicos.</a> 
 </p>
 
 ![demo](public/images/design/desktop/light-mode/desktop-layout.png)
