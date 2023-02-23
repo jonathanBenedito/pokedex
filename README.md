@@ -3,7 +3,7 @@
 </div>
 <h1 align="center"></h1>
 <p align="center">
-    <a href="https://pokedex-1v9psfcic-jonathanbenedito.vercel.app/" target="_blank">Pokédex</a> é um projeto feito em <a href="https://reactjs.org/">React JS</a> no formato de Single Page Application (SPA), alimentada pela <a href="https://pokeapi.co/">PokéAPI</a>. Sua finalidade é listar e mostrar informações dos pokemons existentes na série de jogos eletrônicos.</a> 
+    <a href="https://pokedex-nu-ten.vercel.app/" target="_blank">Pokédex</a> é um projeto feito em <a href="https://reactjs.org/">React JS</a> no formato de Single Page Application (SPA), alimentada pela <a href="https://pokeapi.co/">PokéAPI</a>. Sua finalidade é listar e mostrar informações dos pokemons existentes na série de jogos eletrônicos.</a> 
 </p>
 
 ![demo](public/images/design/desktop/light-mode/desktop-layout.png)
@@ -23,13 +23,13 @@ O usuário também poderá filtrar a lista de pokémons por tipos, utilizando o 
 
 ### Ferramentas
 
-- <u>PokeApi</u>: Utilizado como base de coleta das informações dos pokemons, requerimento obrigatório pelo curso.
+- <b>PokeApi</b>: Utilizado como base de coleta das informações dos pokemons, requerimento obrigatório pelo desafio do curso.
 
-- <u>React Router</u>: Utilizado para mapear as rotas da aplicação, evitando assim o recarregamento das páginas e definindo o aspecto SPA (Single Page Application).
+- <b>React Router</b>: Utilizado para mapear as rotas da aplicação, evitando assim o recarregamento das páginas e definindo o aspecto SPA (Single Page Application).
 
-- <u>styled-components</u>: Usado para evitar possíveis bugs de classes CSS e tornar a estilização mais dinâmica.
+- <b>styled-components</b>: Usado para evitar possíveis bugs de classes CSS e tornar a estilização mais dinâmica.
 
-- <u>Fonts Awesome</u>: Aplicado para implementar alguns ícones nos componentes.
+- <b>Fonts Awesome</b>: Aplicado para implementar alguns ícones nos componentes.
 
 ### Planejamento
 
@@ -69,7 +69,7 @@ Após a finalização dos códigos, foi feita a remoção dos arquivos desnecess
 - Javascript
 - CSS
 
-### 🔗 Links
+## 🔗 Links
 
 Website: <a href="https://pokedex-nu-ten.vercel.app/">pokedex-nu-ten.vercel.app</a>
 <br />
