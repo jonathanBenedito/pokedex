@@ -89,8 +89,6 @@ export const PokemonDetails = () => {
         fetchData()
     }, [])
 
-    console.log(pokemonDetails)
-
     const RenderPokemonDetails = ({pokemonDetails}) => {
         while(pokemonDetails.id === 0) {
             return (

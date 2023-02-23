@@ -4,7 +4,7 @@ import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
 import { PokemonIconType } from "../pokemon-icon-type"
 import { StyledPokemonCard, ImageContainer, Information } from "./style"
 
-export const PokemonCard = ({id, sprites, name, types, test}) => {
+export const PokemonCard = ({id, sprites, name, types}) => {
 
     const { theme } = useContext(ThemeContext)
 
@@ -36,7 +36,8 @@ export const PokemonCard = ({id, sprites, name, types, test}) => {
             <ImageContainer>
                 <img src={sprites.versions["generation-v"]["black-white"].animated.front_default ?? 
                             sprites.other["official-artwork"].front_default
-                        } 
+                        }
+                    alt={`${name} sprite`} 
                 />
             </ImageContainer>
             <Information>
