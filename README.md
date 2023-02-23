@@ -10,6 +10,8 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
 ## 💬 Sobre o projeto
 
@@ -30,6 +32,10 @@ O usuário também poderá filtrar a lista de pokémons por tipos, utilizando o 
 - <b>styled-components</b>: Usado para evitar possíveis bugs de classes CSS e tornar a estilização mais dinâmica.
 
 - <b>Fonts Awesome</b>: Aplicado para implementar alguns ícones nos componentes.
+
+- <b>Jest</b>: Utilizado como meu principal test runner, rápido e simples de utilizar.
+
+- <b>React Testing Library</b>: Foi adotada essa ferramenta para efetuar os testes de software e manter o código manutenível, proporcionando maior segurança durante os momentos de refatoração.
 
 ### Planejamento
 

@@ -16,7 +16,7 @@ export const PokemonIconType = ({typeName, size, responsiveSize}) => {
 
     return (       
         <Section {...{size, responsiveSize, backgroundColor: type.color}}>
-            <img src={type.icon} />
+            <img src={type.icon} alt={`${type.name} icon`}/>
         </Section>
     )
 }

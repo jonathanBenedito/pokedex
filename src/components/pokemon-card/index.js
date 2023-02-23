@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../contexts/theme-context"
 import { getPokemonTypeTheme } from "../../services/pokemon-type-theme"
+import { AddLeadingZeros } from "../../utils"
 import { PokemonIconType } from "../pokemon-icon-type"
 import { StyledPokemonCard, ImageContainer, Information } from "./style"
 
@@ -12,10 +13,6 @@ export const PokemonCard = ({id, sprites, name, types}) => {
         return (
             <PokemonIconType typeName={typeObject.type.name}/>
         )
-    }
-
-    function AddLeadingZeros(number) {
-        return Math.floor(number).toString().padStart(5, '0')
     }
 
     const [pokemonTypeColor, setPokemonTypeColor] = useState({
